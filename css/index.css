@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
+
+:root {
+    /* Paleta de Cores */
+    --cor-primaria: #734832;
+    /* Marrom terroso dos botões */
+    --cor-primaria-hover: #5A3827;
+    /* Marrom um pouco mais escuro para o efeito de hover */
+    --cor-fundo-modal: #F6F1EA;
+    /* Bege bem claro do modal de login */
+    --cor-fundo-topo: #D1C9C1;
+    /* Fundo cinza/bege da parte de cima da página */
+    --cor-fundo-base: #E3DDD5;
+    /* Fundo mais claro da área de produtos */
+
+    --cor-texto-titulo: #2B2B2B;
+    /* Cinza bem escuro para os títulos */
+    --cor-texto-padrao: #4A4A4A;
+    /* Cinza médio para textos normais */
+    --cor-placeholder: #A0A0A0;
+    /* Cinza claro para os textos dentro do input */
+    --cor-borda-input: #686868;
+    /* Cinza da borda dos campos de digitar */
+
+    --cor-erro: #ED4337;
+    /* Vermelho para mensagens de erro */
+
+    /* Fontes */
+    --fonte-titulos: 'Playfair Display', serif;
+    --fonte-textos: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--fonte-textos);
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-padrao);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    /* Faz com que os inputs herdem a fonte do body automaticamente */
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    /* Herda a cor do texto do body */
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+#section_login_modal, #section_cadastro_modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.342);
+}
+
+#login_modal, #cadastro_modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--cor-fundo-modal);
+    padding: 3rem 1rem 2rem 1rem;
+    min-width: 400px;
+    max-width: 600px;
+    height: max-content;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario_padrao {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo_modal {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.75rem, 4vw, 2rem);
+    color: var(--cor-texto-titulo);
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+
+.botao_fechar_modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#img_fechar_modal {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.input_container {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid var(--cor-borda-input);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.input_container input {
+    width: 100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    color: var(--cor-texto-padrao);
+}
+
+.botao_olho {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-image: url('../img/olhoFechado.svg');
+    width: 2rem;
+    height: 2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.botao_enviar_forms {
+    background-color: var(--cor-primaria);
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao_enviar_forms:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+.botao_enviar_forms:active {
+    background-color: var(--cor-primaria-hover);
+    transform: scale(0.98);
+}
+
+.erro_input {
+    color: var(--cor-erro);
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+#links_modal {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 1rem;
+    font-size: clamp(0.5rem, 2vw, 0.7rem);
+}
+
+#botao_esqueci_senha {
+    background-color: transparent;
+    border: none;
+    color: var(--cor-texto-titulo);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#link_cadastro_container {
+    display: flex;
+    gap: 0.1rem;
+}
+
+#link_cadastro_container span {
+    color: var(--cor-texto-padrao);
+}
+
+#botao_cadastro {
+    background-color: transparent;
+    border: none;
+    color: var(--cor-texto-padrao);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#botao_cadastro:hover {
+    transition: color 0.3s ease;
+    color: var(--cor-primaria-hover);
+}
+
+#botao_login {
+    background-color: transparent;
+    border: none;
+    color: var(--cor-texto-padrao);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#botao_login:hover {
+    transition: color 0.3s ease;
+    color: var(--cor-primaria-hover);
+}

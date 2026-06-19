@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+    <title>Aura Chique</title>
+</head>
+
+<body>
+    <section id="section_login_modal">
+        <div id="login_modal">
+
+            <button class="botao_fechar_modal" onclick="fecharModal()">
+                <img src="../img/x.svg" alt="Fechar modal" id="img_fechar_modal">
+            </button>
+
+            <h2 class="titulo_modal">Entre na sua conta</h2>
+            <form class="formulario_padrao" onsubmit="event.preventDefault()">
+                <div class="input_container">
+                    <img class="input_icon" src="../img/envelope.svg" alt="Ícone de e-mail">
+                    <input type="email" placeholder="Seu E-mail" id="email">
+                </div>
+                <span id="erro_email" class="erro_input">Erro no e-mail</span>
+
+                <div class="input_container">
+                    <img class="input_icon" src="../img/cadeado.svg" alt="Ícone de senha">
+                    <input type="password" placeholder="Sua Senha" id="senha_login">
+                    <button type="button" id="botao_visualizar_senha" class="botao_olho" onclick="lidarComSenha(senha_login, botao_visualizar_senha)">
+                    </button>
+                </div>
+                <span id="erro_senha" class="erro_input">Erro na senha</span>
+
+                <button type="submit" onclick="login()" class="botao_enviar_forms">Entrar</button>
+            </form>
+
+            <div id="links_modal">
+                <button id="botao_esqueci_senha" onclick="telaEsqueciSenha()">Esqueci minha senha</button>
+
+                <div id="link_cadastro_container">
+                    <span>Ainda não tem uma conta? </span>
+                    <button id="botao_cadastro" onclick="telaCadastro()">Cadastre-se</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section_cadastro_modal">
+        <div id="cadastro_modal">
+            <button class="botao_fechar_modal" onclick="fecharModal()">
+                <img src="../img/x.svg" alt="Fechar modal" id="img_fechar_modal">
+            </button>
+
+            <h2 class="titulo_modal">Crie sua conta</h2>
+            <form class="formulario_padrao" onsubmit="event.preventDefault()">
+                <div class="input_container">
+                    <img class="input_icon" src="../img/user.svg" alt="Ícone de usuário">
+                    <input type="text" placeholder="Seu Nome Completo" id="nome_cadastro">
+                </div>
+                <span id="erro_nome" class="erro_input">Erro no nome</span>
+
+                <div class="input_container">
+                    <img class="input_icon" src="../img/envelope.svg" alt="Ícone de e-mail">
+                    <input type="email" placeholder="Seu E-mail" id="email_cadastro">
+                </div>
+                <span id="erro_email_cadastro" class="erro_input">Erro no e-mail</span>
+
+                <div class="input_container">
+                    <img class="input_icon" src="../img/cadeado.svg" alt="Ícone de senha">
+                    <input type="password" placeholder="Sua Senha" id="senha_cadastro">
+                    <button type="button" id="botao_visualizar_senha_cadastro" class="botao_olho" onclick="lidarComSenha(senha_cadastro, botao_visualizar_senha_cadastro)">
+                    </button>
+                </div>
+                <span id="erro_senha_cadastro" class="erro_input">Erro na senha</span>
+
+                <div class="input_container">
+                    <img class="input_icon" src="../img/cadeado.svg" alt="Ícone de senha">
+                    <input type="password" placeholder="Confirme sua Senha" id="confirmar_senha_cadastro">
+                    <button type="button" id="botao_visualizar_confirmar_senha_cadastro" class="botao_olho" onclick="lidarComSenha(confirmar_senha_cadastro, botao_visualizar_confirmar_senha_cadastro)">
+                    </button>
+                </div>
+                <span id="erro_confirmar_senha_cadastro" class="erro_input">Erro na confirmação de senha</span>
+
+                <button type="submit" onclick="cadastrar()" class="botao_enviar_forms">Cadastrar</button>
+            </form>
+
+            <div id="links_modal">
+                <span>Já tem uma conta? </span>
+                <button id="botao_login" onclick="telaLogin()">Faça login</button>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    function telaLogin() {
+        section_login_modal.style.display = 'block';
+        section_cadastro_modal.style.display = 'none';
+    }
+
+    function telaCadastro() {
+        section_login_modal.style.display = 'none';
+        section_cadastro_modal.style.display = 'block';
+    }
+
+    function fecharModal() {
+        section_login_modal.style.display = 'none';
+        section_cadastro_modal.style.display = 'none';
+    }
+
+    function lidarComSenha(inputSenha, botao) {
+        if (inputSenha.type == 'password') {
+            inputSenha.type = 'text';
+            botao.style.backgroundImage = "url('../img/olhoAberto.svg')";
+        } else {
+            inputSenha.type = 'password';
+            botao.style.backgroundImage = "url('../img/olhoFechado.svg')";
+        }
+    }
+
+
+    telaLogin(); 
+</script>
