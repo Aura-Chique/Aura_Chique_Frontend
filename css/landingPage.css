@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Rye&display=swap');
+
 
 :root {
     /* Paleta de Cores */
+    --cor-pagina-principal: #E3DACD;
+    /*Cor página principal*/
     --cor-primaria: #734832;
     /* Marrom terroso dos botões */
     --cor-primaria-hover: #5A3827;
     /* Marrom um pouco mais escuro para o efeito de hover */
-    --cor-header:#B9947C;
+    --cor-header: #B9947C;
     /* Marrom claro do header */
     --cor-fundo-modal: #F6F1EA;
     /* Bege bem claro do modal de login */
@@ -35,6 +39,7 @@
     /* Vermelho para mensagens de erro */
 
     /* Fontes */
+    --fonte-texto-inicial: 'Libre Baskerville', serif;
     --fonte-titulos: 'Playfair Display', serif;
     --fonte-textos: 'Montserrat', sans-serif;
     --fonte-header: 'Griffy', cursive;
@@ -63,12 +68,12 @@ header {
     align-items: center;
 }
 
-#logo_container{
-    width: 20% ;
+#logo_container {
+    width: 20%;
     padding: 10px 20px;
     display: flex;
     justify-content: center;
-    
+
 }
 
 #logo_container a {
@@ -86,14 +91,14 @@ header {
 }
 
 
-#nav_links{
+#nav_links {
 
     width: 50%;
     height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
 }
 
 
@@ -140,7 +145,7 @@ header {
 #nav_acesso img:hover {
     filter: invert(21%) sepia(21%) saturate(2206%) hue-rotate(338deg) brightness(91%) contrast(87%);
 }
-   
+
 
 #acesso_links {
     width: 100%;
@@ -176,7 +181,96 @@ header {
     cursor: pointer;
 }
 
-.section_novos_produtos{
+.pagina_principal {
+    width: 100%;
+    height: 83vh;
+    background-color: url(--cor-pagina-principal);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url(../img/Rectangle\ 4.png);
+    background-position: start;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 8%;
+    overflow: hidden;
+}
+
+.informações_desconto {
+
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.informações_desconto h1 {
+
+    text-align: left;
+    font-family: var(--fonte-texto-inicial);
+    font-size: 58px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+}
+
+.desconto {
+
+    color: #71432A;
+    font-family: var(--fonte-texto-inicial);
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 22px;
+    text-align: center;
+}
+
+.btn_ofertas{
+
+    background-color: #734832;
+    width: 15vw;
+    height: 5vh;
+    text-align: center;
+    color: white;
+    border-radius: 25px;
+}
+
+.galeria {
+
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+
+
+.imagemModelo {
+    width: 100%;
+    height: 100%;
+    border-left: solid 8px #c9b09a;
+    transform: skewX(14deg);
+    transform-origin: top;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.imagemModelo img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transform-origin: top;
+    scale: 1.3;
+}
+
+
+.section_novos_produtos {
     width: 100%;
     height: max-content;
     padding: 40px 20px;
@@ -187,7 +281,7 @@ header {
     background-color: var(--cor-fundo-topo);
 }
 
-.container_produtos{
+.container_produtos {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -210,7 +304,7 @@ header {
 
 
 
-.container_novos_produtos{
+.container_novos_produtos {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -264,7 +358,7 @@ header {
     font-weight: 600;
 }
 
-.btn_navegacao_produtos{
+.btn_navegacao_produtos {
     width: 40px;
     height: 40px;
     border-radius: 10px;
@@ -287,4 +381,3 @@ header {
 .btn_navegacao_produtos:active {
     transform: scale(0.95);
 }
-
