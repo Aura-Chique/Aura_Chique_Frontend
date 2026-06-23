@@ -5,7 +5,7 @@
 
 :root {
     /* Paleta de Cores */
-    --cor-pagina-principal: #E3DACD;
+    --cor-pagina-principal: #D0B9A7;
     /*Cor página principal*/
     --cor-primaria: #734832;
     /* Marrom terroso dos botões */
@@ -380,4 +380,62 @@ header {
 
 .btn_navegacao_produtos:active {
     transform: scale(0.95);
+}
+
+.novidades_sazonais{
+
+    width:100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    gap: 25vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #87796ec8;
+}
+
+#textosPrincipais{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+
+}
+
+#textosPrincipais h2{
+
+    font-size: 35px;
+    
+    
+}
+
+#textosPrincipais p{
+    
+    font-size: 28px;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+
+.btn_novidades{
+    background-color: #734832;
+    width: 15vw;
+    height: 5vh;
+    text-align: center;
+    color: white;
+    border-radius: 25px;
+    justify-content: flex-start;
+
+
+}
+
+#imagens_novidades img{
+
+    height: 65vh;
+    width: 25vw;
+    object-fit: cover;
+    border-radius: 25px;
 }
