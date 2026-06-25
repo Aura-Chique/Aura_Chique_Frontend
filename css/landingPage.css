@@ -527,7 +527,7 @@ header {
 
 }
 
-.cupons h2{
+.cupons h2 {
 
     font-size: 35px;
     font-family: var(--fonte-titulos);
@@ -535,14 +535,14 @@ header {
 
 }
 
-.cupons p{
+.cupons p {
 
     font-size: 19px;
     font-family: var(--fonte-textos);
 
 }
 
-#ipt_cupom_desconto{
+#ipt_cupom_desconto {
 
     width: 18vw;
     height: 5vh;
@@ -551,7 +551,7 @@ header {
 
 }
 
-#btn_resgate{
+#btn_resgate {
 
     background-color: #734832;
     width: 18vw;
@@ -567,4 +567,105 @@ header {
 
 #btn_resgate:active {
     transform: scale(0.95);
+}
+
+.footer {
+
+    background-color: #B9947C;
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+#footer_principal{
+   
+    background-color: #B9947C;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #000000; 
+
+}
+
+.titulo_footer {
+
+    font-family: var(--fonte-header);
+    font-size: 17px;
+
+
+}
+
+#nav_footer {
+
+    width: 5%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+#links_footer {
+    width: 10%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#imagens_redes_sociais {
+
+    width: 95%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+#imagens_redes_sociais img {
+
+    width: 30%;
+    height: 4vh;
+
+}
+
+#formas_pagamento {
+
+    width: 95%;
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formas_pagamento img {
+
+    width: 30%;
+    height: 4vh;
+
+}
+
+#direitos_reservados{
+
+    width: 100%;
+    height: 8vh;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    border: solid rgba(0, 0, 0, 0.533) 1px ;
+
 }
