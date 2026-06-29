@@ -78,8 +78,9 @@ ol {
 }
 
 #section_detalhamento_produto {
-    height: 200vh;
+    height: 85vh;
     width: 100%;
+    padding: 0 8rem 0 8rem;
     display: flex;
     flex-direction: column;
 }
@@ -185,7 +186,7 @@ ol {
 #container_cores {
     gap: 1rem;
     margin: 1rem 0;
-    display: flex; 
+    display: flex;
     flex-direction: column;
 }
 
@@ -250,4 +251,39 @@ ol {
 #btn_comprar_agora:active {
     transform: scale(0.98);
     transition: 0.1s ease;
+}
+
+#section_descricao_produto {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 60dvh;
+    padding: 2rem 8rem 0 8rem;
+    background-color: var(--cor-fundo-base)
+}
+
+#container_descricao_produto {
+    padding-top: 2rem;
+}
+
+#tabela_informacoes_produto {
+    width: 70%;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+#tabela_informacoes_produto tr {
+    text-align: justify;
+    table-layout: fixed;
+}
+
+#tabela_informacoes_produto td {
+    border-bottom: 1px solid var(--cor-borda-input);
+}
+
+.coluna_informacao_tabela{
+    width: 60%;
+    text-align: start;
+    font-weight: bold;
 }
