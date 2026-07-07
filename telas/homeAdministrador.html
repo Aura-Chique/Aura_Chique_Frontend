@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/homeAdministrador.css">
+    <link rel="shortcut icon" href="../img/LogoAuraChique.png" type="image/x-icon">
+    <title>Aura Chique</title>
+</head>
+
+<body>
+    <header>
+        <div id="header_container">
+            <a href="../telas/homeAdministrador.html">
+                <img src="../img/LogoAuraChique.png" alt="Logo Aura Chique" id="logo_header">
+            </a>
+            <nav id="nav_header">
+                <ul>
+                    <li><a href="#">
+                            <img src="../img/clipboard-data.svg" alt="">
+                            Dashboard
+                        </a></li>
+
+                    <li><a href="#">
+                            <img src="../img/box-seam.svg" alt="">
+                            Produtos
+                        </a></li>
+
+                    <li><a href="#">
+                            <img src="../img/bag-dash.svg" alt="">
+                            Pedidos
+                        </a></li>
+
+                    <li><a href="#">
+                            <img src="../img/logout.svg" alt="">
+                            Sair
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="container_inicial">
+            <h1 id="titulo_dash">Dashboard</h1>
+            <div id="container_filtro_datas">
+                <button class="botao_data">30d</button>
+                <button class="botao_data">90d</button>
+                <button class="botao_data">6m</button>
+                <button class="botao_data">12m</button>
+            </div>
+        </div>
+
+        <div id="container_kpis">
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Receita Total</h3>
+                    <img src="../img/currency-dollar.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>R$ 151.850</p>
+
+                    <span>últimos 6 meses</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +22.1% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Total de Pedidos</h3>
+                    <img src="../img/bag-dash.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>509</p>
+
+                    <span>últimos 6 meses</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +23.5% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Ticket Médio</h3>
+                    <img src="../img/ticket.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>R$ 298</p>
+
+                    <span>por pedido</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +1,2% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Novos Clientes</h3>
+                    <img src="../img/people.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>127</p>
+
+                    <span>últimos 6 meses</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +15% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Taxa de Retorno</h3>
+                    <img src="../img/arrow-left-right.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>38%</p>
+
+                    <span>clientes que voltam</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-down-right.svg" alt="">
+                    <span class="status_negativo"> -4% vs mês anterior</span>
+                </div>
+            </div>
+
+        </div>
+
+
+    </main>
+</body>
