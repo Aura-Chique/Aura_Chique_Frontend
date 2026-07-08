@@ -1,0 +1,447 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Rye&display=swap');
+
+
+:root {
+    /* Paleta de Cores */
+    --cor-pagina-principal: #D0B9A7;
+    /*Cor página principal*/
+    --cor-primaria: #734832;
+    /* Marrom terroso dos botões */
+    --cor-primaria-hover: #5A3827;
+    /* Marrom um pouco mais escuro para o efeito de hover */
+    --cor-header: #B9947C;
+    /* Marrom claro do header */
+    --cor-fundo-modal: #F6F1EA;
+    /* Bege bem claro do modal de login */
+    --cor-fundo-topo: #D1C9C1;
+    /* Fundo cinza/bege da parte de cima da página */
+    --cor-card-fundo: #d0b9a7;
+    /* Fundo dos cards de produtos */
+    --cor-card-produto: #b5a192;
+    /* Fundo dos cards de produtos */
+    --cor-fundo-base: #E3DDD5;
+    /* Fundo mais claro da área de produtos */
+
+    --cor-texto-titulo: #2B2B2B;
+    /* Cinza bem escuro para os títulos */
+    --cor-texto-padrao: #4A4A4A;
+    /* Cinza médio para textos normais */
+    --cor-placeholder: #A0A0A0;
+    /* Cinza claro para os textos dentro do input */
+    --cor-borda-input: #686868;
+    /* Cinza da borda dos campos de digitar */
+    --cor-link-header: #000000;
+    /* Preto para os links do header */
+
+    --cor-bom: #1cdf3d;
+    --cor-ruim: #ec5151;
+    --cor-fundo-barra: #eee4d9;
+    --cor-fundo-barra-verde: #12b42d;
+    --cor-fundo-barra-vermelha: #ec0808;
+
+    --cor-erro: #ED4337;
+    /* Vermelho para mensagens de erro */
+
+    /* Fontes */
+    --fonte-texto-inicial: 'Libre Baskerville', serif;
+    --fonte-titulos: 'Playfair Display', serif;
+    --fonte-textos: 'Montserrat', sans-serif;
+    --fonte-header: 'Griffy', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--fonte-textos);
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-padrao);
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    width: 10%;
+    min-width: 100px;
+    height: 100vh;
+    background-color: var(--cor-header);
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border-right: var(--cor-primaria-hover) 3px solid;
+    position: fixed;
+}
+
+#logo_header {
+    width: 60%;
+    height: auto;
+    /* background-color: var(--cor-fundo-topo); */
+    display: flex;
+    margin: 20px auto;
+}
+
+#nav_header {
+    border-top: 1px solid var(--cor-primaria-hover);
+    width: 100%;
+    height: 40%;
+    padding: 0 10px;
+    /* background-color: var(--cor-erro); */
+    display: flex;
+    flex-direction: column;
+}
+
+#nav_header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    /* background-color: rgb(87, 87, 87); */
+}
+
+#nav_header li {
+    display: flex;
+}
+
+#nav_header a {
+    text-decoration: none;
+    color: var(--cor-texto-padrao);
+    font-weight: 600;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+
+}
+
+#nav_header a:hover,
+#nav_header a:focus-visible {
+    /*usa quando aperta o tab, fica mesma coisa de um hover*/
+    background-color: rgba(255, 255, 255, 0.22);
+    color: var(--cor-primaria-hover);
+    transform: translateX(4px);
+    outline: none;
+}
+
+#nav_header a img {
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+#nav_header a:hover img,
+#nav_header a:focus-visible img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+#tela_selecionada {
+    background-color: rgba(255, 255, 255, 0.61);
+    color: var(--cor-primaria-hover);
+    box-shadow: inset 0 0 0 1px rgba(90, 56, 39, 0.12);
+}
+
+#tela_selecionada img {
+    filter: brightness(0.8);
+}
+
+#tela_selecionada:hover,
+#tela_selecionada:focus-visible {
+    background-color: rgba(255, 255, 255, 0.61) !important;
+    color: var(--cor-primaria-hover);
+    box-shadow: inset 0 0 0 1px rgba(90, 56, 39, 0.12);
+    transform: none;
+}
+
+main {
+    width: 90%;
+    height: 100vh;
+    margin-left: 10%;
+    padding: 20px;
+    background-color: var(--cor-fundo-base);
+}
+
+#container_inicial {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#titulo_dash {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--cor-texto-titulo);
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+
+#container_filtro_datas {
+    width: 30%;
+    height: 70%;
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #E0CEBC;
+    background-color: #EFEAE4;
+    padding: 0 10px;
+    border-radius: 8px;
+}
+
+.botao_data {
+    border: none;
+    background-color: transparent;
+    color: #7a7a7a;
+    padding: 0.5rem 1rem;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.botao_data:hover {
+    background-color: #e7d6c8;
+    color: var(--cor-primaria-hover);
+    transform: translateY(-1px);
+}
+
+#data_selecionada {
+    background-color: #cf9c72;
+    color: var(--cor-primaria-hover);
+    box-shadow: 0 2px 8px rgba(90, 56, 39, 0.18);
+}
+
+#container_kpis {
+    margin-top: 2%;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card_kpi {
+    width: 17%;
+    min-width: 200px;
+    height: 200px;
+    background-color: #fcfcfc;
+    border: 3px solid #E0CEBC;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container_titulo_kpi {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: clamp(1rem, 1vw, 2rem);
+    /* background-color: red; */
+}
+
+.container_detalhes_valor {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+.container_detalhes_valor p {
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    font-weight: 500;
+}
+
+.container_status_kpi {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.status_positivo {
+    color: var(--cor-bom);
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    font-weight: 600;
+}
+
+.status_negativo {
+    color: var(--cor-ruim);
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    font-weight: 600;
+}
+
+#container_produtos_mais_vendidos {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+.titulo_secao {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: var(--cor-texto-titulo);
+    margin: 20px 0;
+    padding: 0;
+    line-height: normal;
+}
+
+#tabela_produtos_mais_vendidos {
+    text-align: center;
+    border-collapse: collapse;
+    background-color: #fcfcfc;
+}
+
+thead {
+    background-color: #E0CEBC;
+    color: var(--cor-texto-titulo);
+    font-weight: 600;
+    height: 40px;
+}
+
+tbody {
+    color: var(--cor-texto-padrao);
+    font-weight: 400;
+}
+
+tr {
+    height: 40px;
+}
+
+#secao_comportamento_clientes {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+
+#container_indicadores_operacionais {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 20px;
+    border: 3px solid #E0CEBC;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+.indicador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-size: clamp(0.8rem, 1vw, 0.95rem);
+    font-weight: bold;
+    color: var(--cor-bom);
+}
+
+.indicador_negativo {
+    color: var(--cor-ruim);
+}
+
+.barra_progresso {
+    width: 100%;
+    height: 6px;
+    border: none;
+}
+
+.barra_progresso::-webkit-progress-bar {
+    /*Aqui é pra mudar a cor da barra que não é o valor */
+    background-color: var(--cor-fundo-barra);
+}
+
+.barra_progresso_vermelho::-webkit-progress-value {
+    /*Aqui é pra mudar a cor da barra que é o valor em alerta */
+    background-color: var(--cor-fundo-barra-vermelha);
+}
+
+.barra_progresso_verde::-webkit-progress-value {
+    /*Aqui é pra mudar a cor da barra que é o valor bom */
+    background-color: var(--cor-fundo-barra-verde);
+}
+
+#container_graficos_comportamentos_clientes {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.linha_graficos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+.card_grafico_comportamento_clientes {
+    width: 48%;
+    height: clamp(280px, 32vw, 380px);
+    background-color: #fcfcfc;
+    border: 3px solid #E0CEBC;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+canvas {
+    width: 100%;
+    min-height: 200px;
+    display: block;
+}
+
+.titulo_grafico {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(0.7rem, 2vw, 1.2rem);
+    color: var(--cor-texto-titulo);
+    padding: 0;
+    line-height: normal;
+}
+
+@media (max-width: 900px) {
+    .linha_graficos {
+        flex-direction: column;
+    }
+
+    .card_grafico_comportamento_clientes {
+        width: 100%;
+    }
+}
