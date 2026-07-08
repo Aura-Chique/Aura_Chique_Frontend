@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/homeAdministrador.css">
+    <link rel="shortcut icon" href="../img/LogoAuraChique.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Aura Chique</title>
+</head>
+
+<body>
+    <header>
+        <div id="header_container">
+            <a href="../telas/homeAdministrador.html">
+                <img src="../img/LogoAuraChique.png" alt="Logo Aura Chique" id="logo_header">
+            </a>
+            <nav id="nav_header">
+                <ul>
+                    <li><a href="../telas/homeAdministrador.html" id="tela_selecionada">
+                            <img src="../img/clipboard-data.svg" alt="">
+                            Dashboard
+                        </a></li>
+
+                    <li><a href="../telas/gerenciamentoProdutos.html">
+                            <img src="../img/box-seam.svg" alt="">
+                            Produtos
+                        </a></li>
+
+                    <li><a href="../telas/gerenciamentoPedidos.html">
+                            <img src="../img/bag-dash.svg" alt="">
+                            Pedidos
+                        </a></li>
+
+                    <li><a href="../telas/landingPage.html">
+                            <img src="../img/logout.svg" alt="">
+                            Sair
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="container_inicial">
+            <h1 id="titulo_dash">Dashboard</h1>
+            <div id="container_filtro_datas">
+                <button class="botao_data">30d</button>
+                <button class="botao_data" id="data_selecionada">90d</button>
+                <button class="botao_data">6m</button>
+                <button class="botao_data">12m</button>
+            </div>
+        </div>
+
+        <div id="container_kpis">
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Receita Total</h3>
+                    <img src="../img/currency-dollar.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>R$ 151.850</p>
+
+                    <span>últimos 6 meses</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +22.1% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Total de Pedidos</h3>
+                    <img src="../img/bag-dash.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>509</p>
+
+                    <span>últimos 6 meses</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +23.5% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Ticket Médio</h3>
+                    <img src="../img/ticket.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>R$ 298</p>
+
+                    <span>por pedido</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +1,2% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Novos Clientes</h3>
+                    <img src="../img/people.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>127</p>
+
+                    <span>últimos 6 meses</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-up-right.svg" alt="">
+                    <span class="status_positivo"> +15% vs mês anterior</span>
+                </div>
+            </div>
+
+            <div class="card_kpi">
+                <div class="container_titulo_kpi">
+                    <h3>Taxa de Retorno</h3>
+                    <img src="../img/arrow-left-right.svg" alt="">
+                </div>
+
+                <div class="container_detalhes_valor">
+                    <p>38%</p>
+
+                    <span>clientes que voltam</span>
+                </div>
+
+                <div class="container_status_kpi">
+                    <img src="../img/arrow-down-right.svg" alt="">
+                    <span class="status_negativo"> -4% vs mês anterior</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="secao_comportamento_clientes">
+
+            <h2 class="titulo_secao">Comportamento dos Clientes</h2>
+
+            <div id="container_graficos_comportamentos_clientes">
+                <div class="linha_graficos">
+                    <div class="card_grafico_comportamento_clientes">
+                        <h2 class="titulo_grafico"> Por Categoria</h2>
+                        <canvas id="grafico_por_categoria_cliente"></canvas>
+                    </div>
+
+                    <div class="card_grafico_comportamento_clientes">
+                        <h2 class="titulo_grafico"> Pagamentos</h2>
+                        <canvas id="grafico_por_pagamento_cliente"></canvas>
+                    </div>
+                </div>
+
+                <div class="linha_graficos">
+                    <div class="card_grafico_comportamento_clientes">
+                        <h2 class="titulo_grafico"> Status de Pedidos</h2>
+                        <canvas id="grafico_por_status_pedido_cliente"></canvas>
+                    </div>
+
+                    <div class="card_grafico_comportamento_clientes">
+                        <h2 class="titulo_grafico"> Pico por Dia da Semana</h2>
+                        <canvas id="grafico_pico_dia_semana"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="secao_indicadores_operacionais">
+            <h2 class="titulo_secao">Indicadores Operacionais</h2>
+
+            <div id="container_indicadores_operacionais">
+
+                <div class="indicador">
+                    <p>Pedidos entregues no prazo</p>
+                    <span>91%</span>
+                </div>
+                <progress class="barra_progresso barra_progresso_verde" value="91" max="100"></progress>
+                <div class="indicador">
+                    <p>Pagamentos aprovados</p>
+                    <span>97.4%</span>
+                </div>
+                <progress class="barra_progresso barra_progresso_verde" value="97.4" max="100"></progress>
+                <div class="indicador indicador_negativo">
+                    <p>Taxa de cancelamento</p>
+                    <span>4%</span>
+                </div>
+                <progress class="barra_progresso barra_progresso_vermelho" value="4" max="100"></progress>
+                <div class="indicador">
+                    <p>Taxa de devolução</p>
+                    <span>3.2%</span>
+                </div>
+                <progress class="barra_progresso barra_progresso_verde" value="3.2" max="100"></progress>
+                <div class="indicador">
+                    <p>Conversão do site</p>
+                    <span>3.8%</span>
+                </div>
+                <progress class="barra_progresso barra_progresso_verde" value="3.8" max="100"></progress>
+
+            </div>
+        </div>
+
+        <div id="container_produtos_mais_vendidos">
+            <h2 class="titulo_secao">Produtos Mais Vendidos</h2>
+
+            <table id="tabela_produtos_mais_vendidos">
+                <thead>
+                    <th>ID</th>
+                    <th>Produto</th>
+                    <th>Categoria</th>
+                    <th>Vendas</th>
+                    <th>Receita</th>
+                    <th>Estoque</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Vestido Floral</td>
+                        <td>Roupas</td>
+                        <td>150</td>
+                        <td>R$ 7.500</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bolsa de Couro</td>
+                        <td>Acessórios</td>
+                        <td>120</td>
+                        <td>R$ 12.000</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Camisa Social</td>
+                        <td>Roupas</td>
+                        <td>100</td>
+                        <td>R$ 5.000</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Calça Jeans</td>
+                        <td>Roupas</td>
+                        <td>90</td>
+                        <td>R$ 4.500</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Jaqueta de Couro</td>
+                        <td>Roupas</td>
+                        <td>80</td>
+                        <td>R$ 8.000</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Relógio de Pulso</td>
+                        <td>Acessórios</td>
+                        <td>70</td>
+                        <td>R$ 14.000</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Vestido de Festa</td>
+                        <td>Roupas</td>
+                        <td>60</td>
+                        <td>R$ 6.000</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Bolsa de Mão</td>
+                        <td>Acessórios</td>
+                        <td>50</td>
+                        <td>R$ 5.000</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Camisa Polo</td>
+                        <td>Roupas</td>
+                        <td>40</td>
+                        <td>R$ 2.000</td>
+                        <td>18</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Saia Midi</td>
+                        <td>Roupas</td>
+                        <td>30</td>
+                        <td>R$ 1.500</td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </main>
+</body>
+<script>
+
+    const coresGraficos = {
+        categoria: ['#CFA7A7', '#6F7B58'],
+        pagamento: ['#4DBD6A', '#7A4E2E', '#C5B2A0', '#E2D6C7'],
+        status: ['#18B87A', '#4A80F0', '#F5A623', '#EF5350'],
+        semana: '#7A4E2E',
+        semanaLabels: '#9A6A4E',
+        semanaGrid: '#E9DED3'
+    };
+
+    const data_por_categoria_cliente = {
+        labels: [
+            'Bolsas',
+            'Colar',
+            'Academia'
+        ],
+        datasets: [{
+            data: [300, 520, 100],
+            backgroundColor: [
+                coresGraficos.categoria[0],
+                coresGraficos.categoria[1],
+                coresGraficos.categoria[0]
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    new Chart(grafico_por_categoria_cliente, {
+        type: 'doughnut',
+        data: data_por_categoria_cliente,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+
+    const data_por_pagamento_cliente = {
+        labels: [
+            'Pix',
+            'Crédito',
+            'Débito'
+        ],
+        datasets: [{
+            data: [100, 50, 100],
+            backgroundColor: [
+                coresGraficos.pagamento[0],
+                coresGraficos.pagamento[1],
+                coresGraficos.pagamento[2]
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    new Chart(grafico_por_pagamento_cliente, {
+        type: 'doughnut',
+        data: data_por_pagamento_cliente,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+
+    const data_por_status_pedido_cliente = {
+        labels: [
+            'Entregue',
+            'Enviado',
+            'Para entregar'
+        ],
+        datasets: [{
+            data: [300, 50, 100],
+            backgroundColor: [
+                coresGraficos.status[0],
+                coresGraficos.status[1],
+                coresGraficos.status[2]
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    new Chart(grafico_por_status_pedido_cliente, {
+        type: 'doughnut',
+        data: data_por_status_pedido_cliente,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+
+    const data_grafico_pico_dia_semana = {
+        labels: [
+            'segunda-feira',
+            'terça-feira',
+            'quarta-feira',
+            'quinta-feira',
+            'sexta-feira',
+            'sábado',
+            'domingo'
+        ],
+        datasets: [{
+            data: [300, 50, 100, 200, 150, 80, 120],
+            backgroundColor: [
+                coresGraficos.semana,
+                coresGraficos.semana,
+                coresGraficos.semana,
+                coresGraficos.semana,
+                coresGraficos.semana,
+                coresGraficos.semana,
+                coresGraficos.semana
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    new Chart(grafico_pico_dia_semana, {
+        type: 'bar',
+        data: data_grafico_pico_dia_semana,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: coresGraficos.semanaLabels
+                    },
+                    grid: {
+                        color: coresGraficos.semanaGrid
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: coresGraficos.semanaLabels
+                    },
+                    grid: {
+                        color: coresGraficos.semanaGrid
+                    },
+                    border: {
+                        color: coresGraficos.semanaGrid
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
