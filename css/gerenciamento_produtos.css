@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Rye&display=swap');
+
+
+:root {
+    /* Paleta de Cores */
+    --cor-pagina-principal: #D0B9A7;
+    /*Cor página principal*/
+    --cor-primaria: #734832;
+    /* Marrom terroso dos botões */
+    --cor-primaria-hover: #5A3827;
+    /* Marrom um pouco mais escuro para o efeito de hover */
+    --cor-header: #B9947C;
+    /* Marrom claro do header */
+    --cor-fundo-modal: #F6F1EA;
+    /* Bege bem claro do modal de login */
+    --cor-fundo-topo: #D1C9C1;
+    /* Fundo cinza/bege da parte de cima da página */
+    --cor-card-fundo: #d0b9a7;
+    /* Fundo dos cards de produtos */
+    --cor-card-produto: #b5a192;
+    /* Fundo dos cards de produtos */
+    --cor-fundo-base: #E3DDD5;
+    /* Fundo mais claro da área de produtos */
+
+    --cor-texto-titulo: #2B2B2B;
+    /* Cinza bem escuro para os títulos */
+    --cor-texto-padrao: #4A4A4A;
+    /* Cinza médio para textos normais */
+    --cor-placeholder: #A0A0A0;
+    /* Cinza claro para os textos dentro do input */
+    --cor-borda-input: #686868;
+    /* Cinza da borda dos campos de digitar */
+    --cor-link-header: #000000;
+    /* Preto para os links do header */
+
+    --cor-bom: #1cdf3d;
+    --cor-ruim: #ec5151;
+    --cor-fundo-barra: #eee4d9;
+    --cor-fundo-barra-verde: #12b42d;
+    --cor-fundo-barra-vermelha: #ec0808;
+
+    --cor-erro: #ED4337;
+    /* Vermelho para mensagens de erro */
+
+    /* Fontes */
+    --fonte-texto-inicial: 'Libre Baskerville', serif;
+    --fonte-titulos: 'Playfair Display', serif;
+    --fonte-textos: 'Montserrat', sans-serif;
+    --fonte-header: 'Griffy', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--fonte-textos);
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-padrao);
+    display: flex;
+    flex-direction: row;
+}
+
+header {
+    width: 10%;
+    min-width: 100px;
+    height: 100vh;
+    background-color: var(--cor-header);
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    border-right: var(--cor-primaria-hover) 3px solid;
+    position: fixed;
+}
+
+#logo_header {
+    width: 60%;
+    height: auto;
+    /* background-color: var(--cor-fundo-topo); */
+    display: flex;
+    margin: 20px auto;
+}
+
+#nav_header {
+    border-top: 1px solid var(--cor-primaria-hover);
+    width: 100%;
+    height: 40%;
+    padding: 0 10px;
+    /* background-color: var(--cor-erro); */
+    display: flex;
+    flex-direction: column;
+}
+
+#nav_header ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    /* background-color: rgb(87, 87, 87); */
+}
+
+#nav_header li {
+    display: flex;
+}
+
+#nav_header a {
+    text-decoration: none;
+    color: var(--cor-texto-padrao);
+    font-weight: 600;
+    font-size: clamp(0.6rem, 1vw, 1rem);
+    width: 100%;
+    display: flex;
+    gap: 10%;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+
+}
+
+#nav_header a:hover,
+#nav_header a:focus-visible {
+    /*usa quando aperta o tab, fica mesma coisa de um hover*/
+    background-color: rgba(255, 255, 255, 0.22);
+    color: var(--cor-primaria-hover);
+    transform: translateX(4px);
+    outline: none;
+}
+
+#nav_header a img {
+    transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+#nav_header a:hover img,
+#nav_header a:focus-visible img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+main {
+    width: 90%;
+    height: 100vh;
+    margin-left: 10%;
+    padding: 20px;
+    background-color: var(--cor-fundo-modal);
+}
+
+#container_inicial {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#titulo_dash {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--cor-primaria);
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+
+#botao_adicionar {
+
+    background-color: #35523a;
+    color: var(--cor-fundo-modal);
+    width: 12%;
+    height: 50%;
+    border-radius: 10px;
+}
+
+.conteiner_pesquisa {
+
+    height: 15%;
+    border: solid 2px var(--cor-header);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.input_pesquisa{
+
+    width: 85%;
+    height: 40%;
+    border-color: var(--cor-primaria-hover);
+    border-radius: 10px;
+}
+
+.botao_pesquisa{
+
+    background-color: var(--cor-primaria-hover);
+    color: var(--cor-fundo-base);
+    width: 10%;
+    height: 38%;
+    border-radius: 10px;
+}
