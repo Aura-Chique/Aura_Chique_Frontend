@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Rye&display=swap');
+
+
+:root {
+    /* Paleta de Cores */
+    --cor-pagina-principal: #D0B9A7;
+    /*Cor página principal*/
+    --cor-primaria: #734832;
+    /* Marrom terroso dos botões */
+    --cor-primaria-hover: #5A3827;
+    /* Marrom um pouco mais escuro para o efeito de hover */
+    --cor-header: #B9947C;
+    /* Marrom claro do header */
+    --cor-fundo-modal: #F6F1EA;
+    /* Bege bem claro do modal de login */
+    --cor-fundo-topo: #D1C9C1;
+    /* Fundo cinza/bege da parte de cima da página */
+    --cor-card-fundo: #d0b9a7;
+    /* Fundo dos cards de produtos */
+    --cor-card-produto: #b5a192;
+    /* Fundo dos cards de produtos */
+    --cor-fundo-base: #E3DDD5;
+    /* Fundo mais claro da área de produtos */
+
+    --cor-texto-titulo: #2B2B2B;
+    /* Cinza bem escuro para os títulos */
+    --cor-texto-padrao: #4A4A4A;
+    /* Cinza médio para textos normais */
+    --cor-placeholder: #A0A0A0;
+    /* Cinza claro para os textos dentro do input */
+    --cor-borda-input: #686868;
+    /* Cinza da borda dos campos de digitar */
+    --cor-link-header: #000000;
+    /* Preto para os links do header */
+
+    --cor-erro: #ED4337;
+    /* Vermelho para mensagens de erro */
+
+    /* Fontes */
+    --fonte-texto-inicial: 'Libre Baskerville', serif;
+    --fonte-titulos: 'Playfair Display', serif;
+    --fonte-textos: 'Montserrat', sans-serif;
+    --fonte-header: 'Griffy', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--fonte-textos);
+    background-color: var(--cor-fundo-base);
+    color: var(--cor-texto-padrao);
+}
+
+header {
+    background-color: var(--cor-header);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 4px var(--cor-primaria-hover);
+}
+
+#logo_container {
+    width: 20%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+#logo_container a {
+    text-decoration: none;
+    color: var(--cor-link-header);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo_container h2 {
+    font-family: var(--fonte-header);
+    font-size: 30px;
+}
+
+
+#nav_links {
+
+    width: 50%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#menu_links {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color: var(--cor-link-header);
+    font-weight: 600;
+}
+
+#menu_links a {
+    color: var(--cor-link-header);
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+#menu_links a:hover {
+    color: var(--cor-primaria-hover);
+    cursor: pointer;
+}
+
+#nav_acesso {
+
+    width: 20%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav_acesso a:hover {
+    color: var(--cor-primaria-hover);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+#nav_acesso img {
+    width: 20px;
+    height: 20px;
+}
+
+#nav_acesso img:hover {
+    filter: invert(21%) sepia(21%) saturate(2206%) hue-rotate(338deg) brightness(91%) contrast(87%);
+}
+
+
+#acesso_links {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    color: var(--cor-link-header);
+    font-weight: 600;
+}
+
+#acesso_links li {
+    width: 45%;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#acesso_links li a {
+    color: var(--cor-link-header);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#acesso_links li:hover {
+    color: var(--cor-primaria-hover);
+    cursor: pointer;
+}
+
+.carrinho_de_compras {
+    width: 100%;
+    height: 85vh;
+    background-color: var(--cor-fundo-modal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.conteiner_titulo_carrinho {
+    width: 78%;
+    height: 20%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    font-family: var(--fonte-titulos);
+    font-size: 18px;
+
+}
+
+.conteiner_principal {
+
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.conteiner_cards {
+
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    gap: 5vh;
+
+}
+
+.card_produtos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 3px var(--cor-pagina-principal);
+    background-color: white;
+    padding: 10px;
+
+
+}
+
+.img_card {
+
+    width: 18vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card_produtos img {
+
+    width: 8vw;
+    height: 18vh;
+    background-color: white;
+    border-radius: 20px;
+
+}
+
+.conteiner_principal_card {
+
+
+    width: 30vw;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.titulo_produto {
+
+    width: 20vw;
+    height: 6vh;
+    color: #000000;
+    font-size: 20px;
+    margin-left: 10px;
+    font-family: var(--fonte-textos);
+    display: flex;
+    align-items: center;
+}
+
+.remover_produto {
+
+    width: 5vw;
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner_principal_card img {
+    height: 4vh;
+    width: 2vw;
+}
+
+.info_cards {
+
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.informacoes_produto {
+    display: flex;
+    flex-direction: column;
+}
+
+.info_tamanho_cor {
+
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+}
+
+.preco_produto {
+
+    height: 6vh;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-textos);
+    font-size: 12px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;    
+}
+
+.adicionar_remover_produto {
+
+    width: 28vw;
+    height: 4vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.adicionar_remover_produto img {
+
+    height: 3vh;
+    width: 4vw;
+}
+
+ /* <div class="conteiner_resumo_pedidos">
+                    <div class="conteiner_titulo_resumos">
+                        <h2>Resumo Pedidos</h2>
+                    </div>
+                    <div class="Conteiner_frete">
+                        <p>Calcular Frete</p><br>
+                        <div class="input_frete">
+                            <input type="text" placeholder="00000-000">
+                            <button id="botao_frete">OK</button>
+                            <div class="total_frete">
+                                <p>Subtotal Frete</p>
+                                <p>R$ 25,00</p>
+                            </div>
+                        </div>
+                        <div class="total_compra">
+                            <h3>Total</h3>
+                            <h2>R$ 449,00</h2>
+                        </div>
+                    </div>
+                    <div class="botoes_finalizar_pedido">
+                        <button class="botao_finalizacao">Finalizar Compra</button>
+                        <button class="botao_continuar_compras">Continuar Comprando</button>
+                    </div>
+                </div> */
+
+.conteiner_resumo_pedidos{
+
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    border-radius: 15px;
+    border: solid 3px var(--cor-header);
+    color: #000000;
+}
+
+.conteiner_titulo_resumos{
+    height: 6vh;
+    font-family: var(--fonte-textos);
+}
+
+.conteiner_frete{
+    height: 80%;
+    padding: 2%;
+    color: #000000;
+    font-size: 18px;
+}
+
+.conteiner_input_frete{
+
+    display: flex;
+    flex-direction: row;
+    height: 6vh;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.conteiner_input_frete input {
+
+    height: 4vh;
+    display: flex;
+    border-radius: 5px;
+    border-color: solid 2px var(--cor-primaria);
+
+}
+
+.botao_frete{
+
+    height: 4vh;
+    width: 4vw;
+    background-color: rgb(16, 74, 16);
+    color: white;
+    border-radius: 10px;
+}
+
+.total_frete{
+
+    height: 5vh;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total_compra{
+    
+    height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    font-family: var(--fonte-titulos);
+    border-top: solid 2px var(--cor-placeholder);
+}
+
+.preco_total{
+
+    font-family: var(--fonte-texto-inicial);
+    font-size: 16px;
+    color: var(--cor-primaria);
+}
+
+.botoes_finalizar_pedido{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.botao_finalizacao{
+
+    height: 5vh;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(16, 74, 16);
+}
+
+.botao_continuar_compras{
+
+    height: 5vh;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    border: solid 2px var(--cor-primaria);
+}
+
+
