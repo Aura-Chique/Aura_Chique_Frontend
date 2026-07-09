@@ -182,7 +182,7 @@ main {
     border-radius: 10px;
 }
 
-#botao_adicionar:hover{
+#botao_adicionar:hover {
 
     background-color: #64893f;
     transform: translateY(-2px);
@@ -218,7 +218,7 @@ main {
     border-radius: 10px;
 }
 
-.botao_pesquisa:hover{
+.botao_pesquisa:hover {
 
     background-color: #70442b;
     transform: translateY(-1px);
@@ -294,31 +294,34 @@ th {
     margin-left: 25px;
 }
 
-.titulo_produto{
+.titulo_produto {
 
     font-family: var(--fonte-titulos);
     font-size: 20px;
 
 }
 
-.id_produto{
+.id_produto {
 
     font-family: var(--fonte-textos);
     margin-top: 5px;
 }
 
-.preco_produto{
+.preco_produto {
 
     color: var(--cor-primaria-hover);
     font-size: 20px;
 }
 
-.conteiner_tamanhos{
+.conteiner_tamanhos {
 
     gap: 8px;
 }
 
-.tamanho_p, .tamanho_m, .tamanho_g, .tamanho_gg{
+.tamanho_p,
+.tamanho_m,
+.tamanho_g,
+.tamanho_gg {
 
     border: solid 2px var(--cor-borda-input);
     background-color: var(--cor-placeholder);
@@ -332,7 +335,7 @@ th {
     align-items: center;
 }
 
-.status_produto{
+.status_produto {
 
     background-color: #4afc689d;
     color: #35523a;
@@ -341,7 +344,7 @@ th {
     margin: 10px;
 }
 
-.edicoes{
+.edicoes {
 
     display: flex;
     flex-direction: row;
@@ -350,3 +353,188 @@ th {
 
 }
 
+#edicao_produto {
+
+    display: none;
+    width: 30dvw;
+    height: 88dvh;
+    background-color: #fcf4ed;
+    box-shadow: 0px 4px 10px black;
+    border: solid 1px var(--cor-header);
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    border-radius: 10px;
+
+
+}
+
+.conteiner_titulo_edicao_produto {
+
+    height: 15%;
+    border-bottom: solid 2px var(--cor-placeholder);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.conteiner_titulo_edicao_produto h2 {
+
+    margin-left: 25px;
+    font-family: var(--fonte-titulos);
+    color: var(--cor-primaria);
+
+}
+
+.conteiner_titulo_edicao_produto p {
+
+    font-size: 13px;
+    color: var(--cor-borda-input);
+    margin-left: 25px;
+
+}
+
+.conteiner_status {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 7%;
+    margin-left: 25px;
+    gap: 5px;
+
+}
+
+.conteiner_status h2 {
+
+    padding: 3%;
+    background-color: var(--cor-primaria-hover);
+    color: white;
+    border-radius: 100%;
+    height: 10px;
+    width: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+
+}
+
+.conteiner_status h3 {
+
+    color: var(--cor-primaria);
+}
+
+.conteiner_status p {
+
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+}
+
+.exportar_imagem {
+
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.exportar_imagem p{
+
+    display: flex;
+    width: 85%;
+    margin-bottom: 2px;
+}
+
+.img_para_exportar {
+
+    width: 85%;
+    height: 85%;
+    border-radius: 15px;
+    border: dashed 2px var(--cor-primaria-hover);
+}
+
+.novas_info_produto{
+
+    height: 30%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    justify-content: center;
+    
+}
+
+.novas_info_produto p {
+
+    font-size: 15px;
+    margin-top: 12px;
+    font-family: var(--fonte-textos);
+
+
+}
+
+.input_nome_produto, .input_preco{
+
+    height: 17%;
+    border-color: var(--cor-card-fundo);
+    border-radius: 5px;
+
+
+}
+
+.input_descricao{
+
+    height: 25%;
+    border-color: var(--cor-card-fundo);
+    border-radius: 5px;
+
+}
+
+.botoes_edicao{
+
+    gap: 15px;
+    height: 12%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.botao_cancelar_edicao{
+
+
+    color: var(--cor-texto-titulo);
+    width: 25%;
+    height: 50%;
+    border-radius: 25px;
+}
+
+.botao_cancelar_edicao:hover{
+
+    background-color: var(--cor-primaria);
+    transition: 900ms;
+    color: white;
+    transform: scale(-2y);
+
+}
+
+.botao_continuar_edicao{
+
+    color: var(--cor-fundo-modal);
+    width: 25%;
+    height: 50%;
+    border-radius: 25px;
+    background-color: var(--cor-primaria-hover);
+    
+}
+
+.botao_continuar_edicao:hover{
+
+    background-color: var(--cor-primaria);
+    transition: 900ms;
+    color: white;
+    transform: scale(-2y);
+
+}

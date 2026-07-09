@@ -53,6 +53,8 @@
             <button class="botao_pesquisa">Buscar</button>
 
         </div>
+
+        <section class="sessao_gerenciar_produtos">
         <div class="conteiner_estoque_produtos">
 
             <table class="estoque_produtos">
@@ -204,6 +206,41 @@
                 </thead>
             </table>
         </div>
+        <div id="edicao_produto" style="display: none;">
+            <div class="conteiner_titulo_edicao_produto">
+
+                <h2>Editar Produto</h2>
+                <p>Atualização - Passo 1 de 2 - Informções Gerais</p>
+
+            </div>
+
+            <div class="conteiner_status">
+                <h2>1</h2>
+                <h3>Informações</h3>
+                <p>_______</p>
+                <h2>2</h2>
+                <h3>Variantes</h3>
+            </div>
+            <div class="exportar_imagem">
+                <p>Foto do Produto</p>
+                <img src="../img/246216-colar-feminino-colar-perolas-colar-flores-colar-zirconias-colar-delicado-colar-veneziana-colar-elegante-colar-hipoalergico.webp" class="img_para_exportar" alt="">
+            </div>
+            <div class="novas_info_produto">
+                <p>Nome do Produto</p>
+                <input class="input_nome_produto" type="text">
+                <p>$ Preço (R$)</p>
+                <input class="input_preco" type="text">
+                <p>Descrição</p>
+                <input class="input_descricao" type="text">
+            </div>
+            <div class="botoes_edicao">
+
+                <button class="botao_cancelar_edicao">Cancelar</button>
+                <button class="botao_continuar_edicao">Continuar -></button>
+            </div>
+        </div>
+        </section>
+
     </main>
 </body>
 
@@ -212,11 +249,14 @@
 
     function editar_produto(){
 
-        
 
+       edicao_produto.style.display = "block"
 
     }
 
   function excluir_produto(){}
+
+
+
 
 </script>
