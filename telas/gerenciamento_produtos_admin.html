@@ -85,6 +85,27 @@
                                 <h2 class="tamanho_m">M 4</h2>
                                 <h2 class="tamanho_g">G 2</h2>
                                 <h2 class="tamanho_gg">G 4</h2>
+                                <button onclick="abrir_edicao_qtde_tamanho()" id="abrir_edicao_qtd"
+                                    style="display: block;"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-box-arrow-in-down"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                                    </svg>
+                                </button>
+                                <button onclick="abrir_edicao_qtde_tamanho()" id="fechar_edicao_qtd"
+                                    style="display: none;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708z" />
+                                    </svg>
+                                </button>
+
                             </div>
                         </th>
                         <th>
@@ -93,15 +114,16 @@
                         <th>
                             <div class="edicoes">
 
-                                <button onclick="editar_produto()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                        height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <button onclick="editar_produto()" class="icon_editar_card"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
                                             d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                         <path fill-rule="evenodd"
                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                     </svg>
                                 </button>
-                                <button onclick="excluir_produto()">
+                                <button onclick="excluir_produto()" class="icon_excluir_card">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
                                         class="bi bi-trash3" viewBox="0 0 16 16">
                                         <path
@@ -110,6 +132,40 @@
                                 </button>
                             </div>
 
+                        </th>
+                    </thead>
+                    <thead id="alterar_quantidade_tamanho#1" style="display: none;">
+
+                        <th colspan="6" class="quantidade_por_tamanho">
+                            <div class="conteiner_cards_alteracao">
+                                <h2>Editar estoque por tamanho</h2>
+                                <div class="alterar_quantidade">
+
+                                    <div class="tamanho">
+                                        <p>P</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>M</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>G</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>GG</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </th>
                     </thead>
                     <thead>
@@ -131,23 +187,46 @@
                                 <h2 class="tamanho_m">M 4</h2>
                                 <h2 class="tamanho_g">G 2</h2>
                                 <h2 class="tamanho_gg">G 4</h2>
+                                <button onclick="abrir_edicao_qtde_tamanho2()" id="abrir_edicao_qtd"
+                                    style="display: block;"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-box-arrow-in-down"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                                    </svg>
+                                </button>
+                                <button onclick="abrir_edicao_qtde_tamanho2()" id="fechar_edicao_qtd"
+                                    style="display: none;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708z" />
+                                    </svg>
+                                </button>
                             </div>
+
                         </th>
+
                         <th>
                             <h2 class="status_produto">Ativo</h2>
                         </th>
                         <th>
                             <div class="edicoes">
 
-                                <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <button onclick="editar_produto()" class="icon_editar_card"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
                                             d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                         <path fill-rule="evenodd"
                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                     </svg>
                                 </button>
-                                <button>
+                                <button onclick="excluir_produto()" class="icon_excluir_card">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
                                         class="bi bi-trash3" viewBox="0 0 16 16">
                                         <path
@@ -156,6 +235,40 @@
                                 </button>
                             </div>
 
+                        </th>
+                    </thead>
+                    <thead id="alterar_quantidade_tamanho_2" style="display: none;">
+
+                        <th colspan="6" class="quantidade_por_tamanho">
+                            <div class="conteiner_cards_alteracao">
+                                <h2>Editar estoque por tamanho</h2>
+                                <div class="alterar_quantidade">
+
+                                    <div class="tamanho">
+                                        <p>P</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>M</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>G</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>GG</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </th>
                     </thead>
                     <thead>
@@ -177,6 +290,26 @@
                                 <h2 class="tamanho_m">38/2</h2>
                                 <h2 class="tamanho_g">40/26</h2>
                                 <h2 class="tamanho_gg">42/28</h2>
+                                <button onclick="abrir_edicao_qtde_tamanho3()" id="abrir_edicao_qtd"
+                                    style="display: block;"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-box-arrow-in-down"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+                                    </svg>
+                                </button>
+                                <button onclick="abrir_edicao_qtde_tamanho3()" id="fechar_edicao_qtd"
+                                    style="display: none;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-box-arrow-in-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M3.5 10a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 0 0 1h2A1.5 1.5 0 0 0 14 9.5v-8A1.5 1.5 0 0 0 12.5 0h-9A1.5 1.5 0 0 0 2 1.5v8A1.5 1.5 0 0 0 3.5 11h2a.5.5 0 0 0 0-1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M7.646 4.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V14.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708z" />
+                                    </svg>
+                                </button>
                             </div>
                         </th>
                         <th>
@@ -185,15 +318,16 @@
                         <th>
                             <div class="edicoes">
 
-                                <button><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                        fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <button onclick="editar_produto()" class="icon_editar_card"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path
                                             d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
                                         <path fill-rule="evenodd"
                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z" />
                                     </svg>
                                 </button>
-                                <button>
+                                <button onclick="excluir_produto()" class="icon_excluir_card">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red"
                                         class="bi bi-trash3" viewBox="0 0 16 16">
                                         <path
@@ -204,14 +338,55 @@
 
                         </th>
                     </thead>
+                    <thead id="alterar_quantidade_tamanho_3" style="display: none;">
+
+                        <th colspan="6" class="quantidade_por_tamanho">
+                            <div class="conteiner_cards_alteracao">
+                                <h2>Editar estoque por tamanho</h2>
+                                <div class="alterar_quantidade">
+
+                                    <div class="tamanho">
+                                        <p>36</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>38</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>40</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+
+                                    <div class="tamanho">
+                                        <p>44</p>
+                                        <input type="number">
+                                        <p>un.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </th>
+                    </thead>
                 </table>
             </div>
             <div id="novo_produto" style="display: none;">
-                <div class="conteiner_titulo_edicao_produto">
-
-                    <h2>Adicionar Produto</h2>
-                    <p>Cadastrar - Passo 1 de 2 - Informações Gerais</p>
-
+                <div class="conteiner_decisao_produto">
+                    <div class="conteiner_titulo_edicao_produto">
+                        <h2>Adicionar Produto</h2>
+                        <p>Cadastrar - Passo 1 de 2 - Informações Gerais</p>
+                    </div>
+                    <button class="svg_botao_sair" onclick="fechar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 16 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </button>
                 </div>
 
                 <div class="conteiner_status">
@@ -240,41 +415,53 @@
                     <button class="botao_continuar_edicao">Continuar -></button>
                 </div>
             </div>
-        </section>
-        <div id="edicao_produto" style="display: none;">
-            <div class="conteiner_titulo_edicao_produto">
 
-                <h2>Editar Produto</h2>
-                <p>Atualização - Passo 1 de 2 - Informações Gerais</p>
 
-            </div>
+            <div id="edicao_produto" style="display: none;">
+                <div class="conteiner_decisao_produto">
 
-            <div class="conteiner_status">
-                <h2>1</h2>
-                <h3>Informações</h3>
-                <p>_______</p>
-                <h2>2</h2>
-                <h3>Variantes</h3>
-            </div>
-            <div class="exportar_imagem">
-                <p>Foto do Produto</p>
-                <img src="../img/246216-colar-feminino-colar-perolas-colar-flores-colar-zirconias-colar-delicado-colar-veneziana-colar-elegante-colar-hipoalergico.webp"
-                    class="img_para_exportar" alt="">
-            </div>
-            <div class="novas_info_produto">
-                <p>Nome do Produto</p>
-                <input class="input_nome_produto" type="text">
-                <p>$ Preço (R$)</p>
-                <input class="input_preco" type="text">
-                <p>Descrição</p>
-                <input class="input_descricao" type="text">
-            </div>
-            <div class="botoes_edicao">
+                    <div class="conteiner_titulo_edicao_produto">
 
-                <button class="botao_cancelar_edicao" onclick="fechar()">Cancelar</button>
-                <button class="botao_continuar_edicao">Continuar -></button>
+                        <h2>Editar Produto</h2>
+                        <p>Atualização - Passo 1 de 2 - Informações Gerais</p>
+
+                    </div>
+                    <button class="svg_botao_sair" onclick="fechar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                            class="bi bi-x" viewBox="0 0 16 16">
+                            <path
+                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </button>
+                </div>
+
+
+                <div class="conteiner_status">
+                    <h2>1</h2>
+                    <h3>Informações</h3>
+                    <p>_______</p>
+                    <h2>2</h2>
+                    <h3>Variantes</h3>
+                </div>
+                <div class="exportar_imagem">
+                    <p>Foto do Produto</p>
+                    <img src="../img/246216-colar-feminino-colar-perolas-colar-flores-colar-zirconias-colar-delicado-colar-veneziana-colar-elegante-colar-hipoalergico.webp"
+                        class="img_para_exportar" alt="">
+                </div>
+                <div class="novas_info_produto">
+                    <p>Nome do Produto</p>
+                    <input class="input_nome_produto" type="text">
+                    <p>$ Preço (R$)</p>
+                    <input class="input_preco" type="text">
+                    <p>Descrição</p>
+                    <input class="input_descricao" type="text">
+                </div>
+                <div class="botoes_edicao">
+
+                    <button class="botao_cancelar_edicao" onclick="fechar()">Cancelar</button>
+                    <button class="botao_continuar_edicao">Continuar -></button>
+                </div>
             </div>
-        </div>
         </section>
 
     </main>
@@ -283,9 +470,66 @@
 </html>
 <script>
 
-    function adicionar_produto(){
+    function abrir_edicao_qtde_tamanho() {
 
-        novo_produto.style.display = "block"
+        const containerEdicao = document.getElementById('alterar_quantidade_tamanho#1');
+        const containerEdicao2 = document.getElementById('alterar_quantidade_tamanho_2');
+
+        if (containerEdicao.style.display === 'none') {
+
+            containerEdicao.style.display = 'table-header-group';
+            fechar_edicao_qtd.style.display = 'block';
+            abrir_edicao_qtd.style.display = 'none';
+
+        } else {
+
+            containerEdicao.style.display = 'none';
+            fechar_edicao_qtd.style.display = 'none';
+            abrir_edicao_qtd.style.display = 'block';
+        }
+    }
+
+    function abrir_edicao_qtde_tamanho2() {
+
+        const containerEdicao2 = document.getElementById('alterar_quantidade_tamanho_2');
+
+        if (containerEdicao2.style.display === 'none') {
+
+            containerEdicao2.style.display = 'table-header-group';
+            fechar_edicao_qtd.style.display = 'block';
+            abrir_edicao_qtd.style.display = 'none';
+
+        } else {
+
+            containerEdicao2.style.display = 'none';
+            fechar_edicao_qtd.style.display = 'none';
+            abrir_edicao_qtd.style.display = 'block';
+        }
+    }
+
+    function abrir_edicao_qtde_tamanho3() {
+
+        const containerEdicao3 = document.getElementById('alterar_quantidade_tamanho_3');
+
+        if (containerEdicao3.style.display === 'none') {
+
+            containerEdicao3.style.display = 'table-header-group';
+            fechar_edicao_qtd.style.display = 'block';
+            abrir_edicao_qtd.style.display = 'none';
+
+        } else {
+
+            containerEdicao3.style.display = 'none';
+            fechar_edicao_qtd.style.display = 'none';
+            abrir_edicao_qtd.style.display = 'block';
+        }
+    }
+
+
+
+    function adicionar_produto() {
+
+        novo_produto.style.display = "block";
 
 
     }
@@ -293,15 +537,17 @@
     function editar_produto() {
 
 
-        edicao_produto.style.display = "block"
+        edicao_produto.style.display = "block";
 
     }
 
-    function fechar(){
-        novo_produto.style.display = "none"
-         edicao_produto.style.display = "none"
+    function fechar() {
+        novo_produto.style.display = "none";
+        edicao_produto.style.display = "none";
 
     }
+
+    func
 
     function excluir_produto() { }
 
