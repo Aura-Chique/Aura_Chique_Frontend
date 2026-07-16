@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/gerenciamentoPedidos.css">
+    <link rel="shortcut icon" href="../img/LogoAuraChique.png" type="image/x-icon">
+    <title>Aura Chique</title>
+</head>
+
+<body>
+    <header>
+        <div id="header_container">
+            <a href="../telas/homeAdministrador.html">
+                <img src="../img/LogoAuraChique.png" alt="Logo Aura Chique" id="logo_header">
+            </a>
+            <nav id="nav_header">
+                <ul>
+                    <li><a href="../telas/homeAdministrador.html">
+                            <img src="../img/clipboard-data.svg" alt="">
+                            Dashboard
+                        </a></li>
+
+                    <li><a href="../telas/gerenciamentoProdutos.html">
+                            <img src="../img/box-seam.svg" alt="">
+                            Produtos
+                        </a></li>
+
+                    <li><a href="../telas/gerenciamentoPedidos.html" id="tela_selecionada">
+                            <img src="../img/bag-dash.svg" alt="">
+                            Pedidos
+                        </a></li>
+
+                    <li><a href="../telas/landingPage.html">
+                            <img src="../img/logout.svg" alt="">
+                            Sair
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="container_inicial">
+            <h1 id="titulo_dash">Gerenciar Pedidos</h1>
+            <div id="container_filtro_datas">
+                <button class="botao_data">30d</button>
+                <button class="botao_data">90d</button>
+                <button class="botao_data" id="data_selecionada">6m</button>
+                <button class="botao_data">12m</button>
+            </div>
+        </div>
+        <div id="container_kpis_pedidos">
+            <span id="total_pedidos">2 pedidos no total</span>
+
+            <div id="kanban_board">
+                <div class="kanban_column" id="coluna_processando">
+
+                    <div class="kpi_pedidos" id="para_entregar">
+                        <div class="kpi_titulo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-clock" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                            </svg>
+                            <span class="rotulo_kpi_pedidos">Processando</span>
+                        </div>
+                        <span class="valor_kpi_pedidos">0</span>
+                    </div>
+
+                    <div class="kanban_body">
+                        <div class="empty_state">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#d1c9c1"
+                                class="bi bi-box" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
+                            </svg>
+                            <p>Nenhum pedido</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban_column" id="coluna_enviado">
+                    <div class="kpi_pedidos" id="enviado">
+
+                        <div class="kpi_titulo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-truck" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
+                            </svg>
+                            <span class="rotulo_kpi_pedidos">Enviado</span>
+                        </div>
+                        <span class="valor_kpi_pedidos">2</span>
+                    </div>
+
+                    <div class="kanban_body">
+
+                        <div class="card_pedido" draggable="true" onclick="abrirMenuDetalhes(this)">
+                            <div class="card_header">
+                                <span class="pedido_id"># 1001</span>
+                                <span class="pedido_data">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                                        class="bi bi-calendar" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                    </svg>
+                                    09 de jun. de 2026
+                                </span>
+                            </div>
+                            <div class="card_produto">
+                                <img src="../img/246216-colar-feminino-colar-perolas-colar-flores-colar-zirconias-colar-delicado-colar-veneziana-colar-elegante-colar-hipoalergico.webp"
+                                    alt="Produto">
+                                <div class="produto_info">
+                                    <span class="produto_nome">Colar de Flores prateado</span>
+                                    <span class="produto_detalhes">1x · Prata</span>
+                                </div>
+                            </div>
+                            <div class="card_footer">
+                                <span class="pedido_preco">R$ 549,90</span>
+                                <span class="pedido_rastreio">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                                        class="bi bi-tag" viewBox="0 0 16 16">
+                                        <path
+                                            d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0" />
+                                        <path
+                                            d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z" />
+                                    </svg>
+                                    BR123456789
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#a0a0a0"
+                                    class="seta_card bi bi-chevron-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="card_pedido" draggable="true" onclick="abrirMenuDetalhes(this)">
+                            <div class="card_header">
+                                <span class="pedido_id"># 1002</span>
+                                <span class="pedido_data">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                                        class="bi bi-calendar" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+                                    </svg>
+                                    14 de jun. de 2026
+                                </span>
+                            </div>
+                            <div class="card_produto">
+                                <img src="../img/oculos-de-sol-feminino-moda-elegante-921180.webp" alt="Produto">
+                                <div class="produto_info">
+                                    <span class="produto_nome">Oculos de Sol Feminino</span>
+                                    <span class="produto_detalhes">1x · Bege</span>
+                                </div>
+                            </div>
+                            <div class="card_produto">
+                                <img src="../img/novidade_copa.jpg" alt="Produto">
+                                <div class="produto_info">
+                                    <span class="produto_nome">Cropped do Brasil</span>
+                                    <span class="produto_detalhes">1x · Padrão</span>
+                                </div>
+                            </div>
+                            <div class="card_footer">
+                                <span class="pedido_preco">R$ 399,90</span>
+                                <span class="pedido_rastreio">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                                        class="bi bi-tag" viewBox="0 0 16 16">
+                                        <path
+                                            d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0" />
+                                        <path
+                                            d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z" />
+                                    </svg>
+                                    BR987654321
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#a0a0a0"
+                                    class="seta_card bi bi-chevron-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="empty_state">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#d1c9c1"
+                                class="bi bi-box" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
+                            </svg>
+                            <p>Nenhum pedido</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kanban_column" id="coluna_entregue">
+                    <div class="kpi_pedidos" id="entregue">
+                        <div class="kpi_titulo">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-check-circle" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                <path
+                                    d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+                            </svg>
+                            <span class="rotulo_kpi_pedidos">Entregue</span>
+                        </div>
+                        <span class="valor_kpi_pedidos">0</span>
+                    </div>
+                    <div class="kanban_body">
+
+                        <div class="empty_state">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#d1c9c1"
+                                class="bi bi-box" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z" />
+                            </svg>
+                            <p>Nenhum pedido</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="modal_detalhamento_pedido">
+                    <div class="modal_header">
+                        <div class="modal_titulo_container">
+                            <h2 class="modal_titulo">Pedido <span class="modal_id">#1002</span></h2>
+                            <p class="modal_subtitulo">14 de jun. de 2026 · Cartão de Crédito</p>
+                        </div>
+                        <button id="fechar_modal" onclick="fecharMenuDetalhes()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="modal_status_preco">
+                        <div class="badge_status status_enviado">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2" />
+                            </svg>
+                            Enviado
+                        </div>
+                        <div class="preco_destaque">R$ 849,80</div>
+                    </div>
+
+                    <div class="secao_modal divisor_topo">
+                        <h3 class="titulo_secao">DADOS DE ENTREGA</h3>
+                        <div class="dado_item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                            </svg>
+                            <div class="dado_conteudo">
+                                <span class="dado_label">CLIENTE</span>
+                                <span class="dado_valor">Carlos Eduardo Lima</span>
+                            </div>
+                            <svg class="icone_copiar" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </div>
+                        <div class="dado_item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone" viewBox="0 0 16 16">
+                                <path
+                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                            </svg>
+                            <div class="dado_conteudo">
+                                <span class="dado_label">TELEFONE</span>
+                                <span class="dado_valor">(21) 99234-5678</span>
+                            </div>
+                            <svg class="icone_copiar" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </div>
+                        <div class="dado_item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path
+                                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                            </svg>
+                            <div class="dado_conteudo">
+                                <span class="dado_label">E-MAIL</span>
+                                <span class="dado_valor">carlos.lima@email.com</span>
+                            </div>
+                            <svg class="icone_copiar" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </div>
+                        <div class="dado_item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                            </svg>
+                            <div class="dado_conteudo">
+                                <span class="dado_label">ENDEREÇO</span>
+                                <span class="dado_valor">Av. Atlântica, 880, Cobertura —<br>Copacabana, Rio de
+                                    Janeiro/RJ ·
+                                    CEP
+                                    22010-000</span>
+                            </div>
+                            <svg class="icone_copiar" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </div>
+                        <div class="dado_item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-cash" viewBox="0 0 16 16">
+                                <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+                                <path
+                                    d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
+                            </svg>
+                            <div class="dado_conteudo">
+                                <span class="dado_label">FORMA DE PAGAMENTO</span>
+                                <span class="dado_valor">Pix</span>
+                            </div>
+                            <svg class="icone_copiar" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </div>
+                        <div class="dado_item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                                class="bi bi-tag" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 4.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-1 0a.5.5 0 1 0-1 0 .5.5 0 0 0 1 0" />
+                                <path
+                                    d="M2 1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 1 6.586V2a1 1 0 0 1 1-1m0 5.586 7 7L13.586 9l-7-7H2z" />
+                            </svg>
+                            <div class="dado_conteudo">
+                                <span class="dado_label">RASTREIO</span>
+                                <span class="dado_valor">BR987654321</span>
+                            </div>
+                            <svg class="icone_copiar" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="secao_modal divisor_topo">
+                        <h3 class="titulo_secao">ITENS DO PEDIDO - 2 ITENS</h3>
+
+                        <div class="lista_itens">
+                            <div class="item_pedido_modal">
+                                <img src="../img/cinto.webp" alt="Produto">
+                                <div class="item_info_modal">
+                                    <div class="item_header_modal">
+                                        <span class="item_nome_modal">Cinto</span>
+                                        <span class="item_preco_modal">R$ 399,90</span>
+                                    </div>
+                                    <div class="item_tags">
+                                        <span class="tag_modal">Tam. G</span>
+                                        <span class="tag_modal">Bege</span>
+                                        <span class="tag_modal">Qtd. 1</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item_pedido_modal">
+                                <img src="../img/Bolsa.webp" alt="Polo Premium">
+                                <div class="item_info_modal">
+                                    <div class="item_header_modal">
+                                        <span class="item_nome_modal">Bolsa</span>
+                                        <span class="item_preco_modal">R$ 359,80</span>
+                                    </div>
+                                    <div class="item_tags">
+                                        <span class="tag_modal">Verde Oliva</span>
+                                        <span class="tag_modal">Qtd. 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resumo_financeiro">
+                        <div class="linha_resumo">
+                            <span>Subtotal</span>
+                            <span>R$ 759,70</span>
+                        </div>
+                        <div class="linha_resumo">
+                            <span>Frete</span>
+                            <span class="frete_gratis">Grátis</span>
+                        </div>
+                        <div class="linha_resumo total_resumo">
+                            <span>Total</span>
+                            <span>R$ 849,80</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {  /*Apenas carrega quando o a pagina ja carregou tudo*/
+        const cards = document.querySelectorAll('.card_pedido');
+        const dropzones = document.querySelectorAll('.kanban_body');
+
+        let draggedCard = null; // guarda o card que o usuario esta arrastando
+
+        let placeholder = document.createElement('div');
+        placeholder.className = 'drop-placeholder';
+        placeholder.innerText = 'Soltar aqui';
+
+        // Atualiza os contadores das colunas
+        function updateCounters() {
+            document.querySelectorAll('.kanban_column').forEach(column => {
+                const totalCards = column.querySelectorAll('.card_pedido').length;
+                const badge = column.querySelector('.valor_kpi_pedidos');
+                const emptyState = column.querySelector('.empty_state');
+
+                badge.innerText = totalCards;
+
+                // Mostra ou esconde o "Nenhum pedido"
+                if (totalCards === 0) {
+                    if (emptyState) emptyState.style.display = 'flex';
+                } else {
+                    if (emptyState) emptyState.style.display = 'none';
+                }
+            });
+        }
+
+        // Inicia com os contadores 
+        updateCounters();
+
+        cards.forEach(card => {
+            card.addEventListener('dragstart', function () {
+                draggedCard = this;
+                setTimeout(() => this.classList.add('dragging'), 0);
+            });
+
+            card.addEventListener('dragend', function () {
+                this.classList.remove('dragging');
+                draggedCard = null;
+                if (placeholder.parentNode) {
+                    placeholder.parentNode.removeChild(placeholder);
+                }
+                dropzones.forEach(zone => zone.classList.remove('drag-over'));
+            });
+        });
+
+        dropzones.forEach(zone => {
+            zone.addEventListener('dragover', function (e) { // quando passa por cima da dropzone
+                e.preventDefault(); // Necessário para permitir o "drop"
+                this.classList.add('drag-over');
+
+                // Esconde o empty state temporariamente durante o drag
+                const emptyState = this.querySelector('.empty_state');
+                if (emptyState) emptyState.style.display = 'none';
+
+                // Adiciona a caixa tracejada "Soltar aqui" no final da coluna
+                this.appendChild(placeholder);
+            });
+
+            zone.addEventListener('dragleave', function () { // quando sai da dropzone
+                this.classList.remove('drag-over');
+            });
+
+            zone.addEventListener('drop', function () {
+                this.classList.remove('drag-over');
+                if (draggedCard) {
+                    // Substitui o placeholder pelo card real
+                    //elementoPai.insertBefore(O_Que_Vou_Inserir, Antes_De_Qual_Elemento), ai ele coloca o card  por cima do placeholder
+                    this.insertBefore(draggedCard, placeholder);
+                    updateCounters();
+                }
+            });
+        });
+    });
+
+
+    function abrirMenuDetalhes(card) {
+        const detalhes = document.getElementById('modal_detalhamento_pedido');
+
+        if (detalhes.style.display === 'flex') {
+            detalhes.style.display = 'none';
+        } else {
+            detalhes.style.display = 'flex';
+        }
+    }
+
+    function fecharMenuDetalhes() {
+        const detalhes = document.getElementById('modal_detalhamento_pedido');
+        detalhes.style.display = 'none';
+    }
+
+</script>
