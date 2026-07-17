@@ -37,6 +37,181 @@
             </ul>
         </nav>
     </header>
+    <section class="perfil_conteiner">
+        <div class="perfil_info">
+            <div class="perfil_avatar">
+                <h2>Cliente Aura Chique</h2>
+                <p>abc@gmail.com</p>
+            </div>
+            <div class="perfil_actions">
+                <button class="btn_editar">Editar Perfil</button>
+                <button class="btn_excluir">Excluir Perfil</button>
+            </div>
+        </div>
+        <div class="conteiner_botoes">
+            <button class="btn_dados_pessoais" onclick="abrirAbaDadosPessoais()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                </svg>
+                Dados Pessoais
+            </button>
+            <button class="btn_enderecos" onclick="abrirAbaEnderecos()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                </svg>
+                Endereços de Entrega
+            </button>
+
+        </div>
+
+        <div id="conteiner_dados_pessoais">
+            <div class="texto_dados_pessoais">
+                <h3>Dados Pessoais</h3>
+
+            </div>
+            <div class="dados_pessoais_container">
+                <div class="input_container">
+                    <p>Nome:</p> <input type="text">
+                </div>
+                <div class="input_container">
+                    <p>Email:</p> <input type="text">
+                </div>
+                <div class="input_container">
+                    <p>Telefone:</p> <input type="text">
+                </div>
+                <div class="input_container">
+                    <p>CPF:</p> <input type="text">
+                </div>
+                <div class="input_container">
+                    <p>Data de Nascimento:</p> <input type="text">
+                </div>
+                <div class="input_container">
+                    <p>Gênero:</p> <input type="text">
+                </div>
+            </div>
+
+        </div>
+        <div id="conteiner_enderecos">
+
+            <div class="header_enderecos">
+                <div class="textos_header_enderecos">
+                    <h3>Meus Endereços</h3>
+                </div>
+                <button class="btn_novo_endereco" onclick="abrirModalEndereco()">+ Novo Endereço</button>
+            </div>
+
+            <div id="enderecos_ativos">
+                <!-- Card do Endereço (Estilo imagem) -->
+                <div class="card_endereco">
+                    <div class="card_topo">
+                        <div class="icone_casa">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4z" />
+                            </svg>
+                        </div>
+                        <div class="info_texto_endereco">
+                            <h4>Casa</h4>
+                            <p>Rua das Acácias, 142, Apto 32</p>
+                            <span>Jardim Paulista - São Paulo/SP - 01310-100</span>
+                        </div>
+                    </div>
+
+                    <hr class="linha_divisoria">
+
+                    <div class="card_acoes">
+                        <button class="btn_acao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+                            </svg>
+                            Editar
+                        </button>
+                        <button class="btn_acao">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                <path fill-rule="evenodd"
+                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                            </svg>
+                            Remover
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal_novo_endereco" class="modal_overlay">
+            <div class="modal_conteudo">
+                <div class="modal_header">
+                    <h3>Cadastrar Novo Endereço</h3>
+                    <button class="btn_fechar" onclick="fecharModalEndereco()">&times;</button>
+                </div>
+
+                <div id="enderecos_container">
+                    <div class="input_container">
+                        <p>Cep:</p> <input type="text">
+                    </div>
+                    <div class="input_container">
+                        <p>Rua / Logradouro:</p> <input type="text">
+                    </div>
+                    <div class="input_container">
+                        <p>Número:</p> <input type="text">
+                    </div>
+                    <div class="input_container">
+                        <p>Complemento:</p> <input type="text">
+                    </div>
+                    <div class="input_container">
+                        <p>Bairro:</p> <input type="text">
+                    </div>
+                    <div class="input_container">
+                        <p>Cidade:</p> <input type="text">
+                    </div>
+                    <div class="input_container_linha">
+                        <p>Estado:</p> <input type="text">
+                    </div>
+                </div>
+
+                <div style="width: 100%; display: flex; justify-content: center; margin-top: 20px;">
+                    <button class="btn_adicionar_endereco">Adicionar Endereço</button>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
+<script>
+    function abrirAbaEnderecos() {
+        conteiner_enderecos.style.display = 'block';
+        conteiner_dados_pessoais.style.display = 'none';
+    }
+
+    function abrirAbaDadosPessoais() {
+        conteiner_enderecos.style.display = 'none';
+        conteiner_dados_pessoais.style.display = 'flex';
+    }
+
+    function abrirModalEndereco() {
+        modal_novo_endereco.style.display = 'flex';
+    }
+
+    function fecharModalEndereco() {
+        modal_novo_endereco.style.display = 'none';
+    }
+
+    window.onclick = function (event) {  // função para fechar o modal ao clicar fora dele
+        if (event.target === modal_novo_endereco) {
+            fecharModalEndereco();
+        }
+    }
+</script>
 
 </html>
