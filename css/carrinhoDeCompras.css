@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Rye&display=swap');
 
-
 :root {
     /* Paleta de Cores */
     --cor-pagina-principal: #D0B9A7;
@@ -14,7 +13,7 @@
     --cor-header: #B9947C;
     /* Marrom claro do header */
     --cor-fundo-modal: #F6F1EA;
-    /* Bege bem claro do modal de login */
+    /* Bege bem claro do modal de login*/
     --cor-fundo-topo: #D1C9C1;
     /* Fundo cinza/bege da parte de cima da página */
     --cor-card-fundo: #d0b9a7;
@@ -456,7 +455,6 @@ header {
 }
 
 .botao_finalizacao:hover {
-
     background-color: #2a6828;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -471,12 +469,9 @@ header {
 }
 
 .botao_continuar_compras:hover {
-
     background-color: rgb(16, 74, 16);
     color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(92, 58, 33, 0.2);
     border: solid 2px var(--cor-link-header);
-
-
 }
