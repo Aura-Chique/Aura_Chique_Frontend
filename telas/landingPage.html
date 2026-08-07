@@ -298,7 +298,7 @@
             <form class="formulario_padrao" onsubmit="event.preventDefault()">
                 <div class="input_container">
                     <img class="input_icon" src="../img/envelope.svg" alt="Ícone de e-mail">
-                    <input type="email" placeholder="Seu E-mail" id="email">
+                    <input type="email" placeholder="Seu E-mail" id="email_login">
                 </div>
                 <span id="erro_email" class="erro_input">Erro no e-mail</span>
 
@@ -412,5 +412,68 @@
         }
     }
 
+    function login() {
+        const email = email_login.value;
+        const senha = senha_login.value;
+        let tem_erro_email = false;
+        let tem_erro_senha = false;
+
+        if (!email.includes('@')) {
+            erro_email.innerHTML = 'Por favor, insira um e-mail válido.';
+            erro_email.style.display = 'block';
+            tem_erro_email = true;
+        }
+        if (email.trim() === '' || senha.trim() === '') {
+            erro_senha.innerHTML = 'Por favor, preencha todos os campos.';
+            erro_senha.style.display = 'block';
+            tem_erro_senha = true;
+        }
+        if (senha.length < 6) {
+            erro_senha.innerHTML = 'A senha deve ter pelo menos 6 caracteres.';
+            erro_senha.style.display = 'block';
+            tem_erro_senha = true;
+        }
+
+        if (!tem_erro_email) {
+            erro_email.style.display = 'none';
+        }
+        if (!tem_erro_senha) {
+            erro_senha.style.display = 'none';
+        }
+        if (tem_erro_email || tem_erro_senha) {
+            return;
+        }
+
+        fetch('http://localhost:3000/api/usuarios/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, senha })
+        }).then(async response => {
+                const data = await response.json()
+                if (!response.ok) {
+                    const msg = data.mensagem || `Erro na requisição: ${response.status}`;
+                    throw new Error(msg);
+                }
+
+                return data;
+            })
+            .then(data => {
+                if (data.token) {
+                    alert('Login bem-sucedido!');
+                    localStorage.setItem('token', data.token);
+                    fecharModal();
+                } else {
+                    alert('Falha no login: ' + (data.mensagem || 'Resposta inválida'));
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                erro_senha.innerHTML = error.message;
+                erro_senha.style.display = 'block';
+                alert('Ocorreu um erro ao tentar fazer login.');
+            });
+    }
 
 </script>

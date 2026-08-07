@@ -782,6 +782,7 @@ header {
     color: var(--cor-erro);
     font-size: 0.9rem;
     width: 100%;
+    display: none;
 }
 
 #links_modal {
