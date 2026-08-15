@@ -311,7 +311,7 @@
                 </div>
                 <span id="erro_senha" class="erro_input">Erro na senha</span>
 
-                <button type="submit" onclick="login()" class="botao_enviar_forms">Entrar</button>
+                <button type="submit" id="botao_login_submit" onclick="login()" class="botao_enviar_forms">Entrar</button>
             </form>
 
             <div id="links_modal">
@@ -363,7 +363,7 @@
                 </div>
                 <span id="erro_confirmar_senha_cadastro" class="erro_input">Erro na confirmação de senha</span>
 
-                <button type="submit" onclick="cadastrar()" class="botao_enviar_forms">Cadastrar</button>
+                <button type="submit" id="botao_cadastro_submit" onclick="cadastrar()" class="botao_enviar_forms">Cadastrar</button>
             </form>
 
             <div id="links_modal">
@@ -412,7 +412,12 @@
         }
     }
 
+    let enviandoLogin = false;
+    let enviandoCadastro = false;
+
     function login() {
+        if (enviandoLogin) return;
+
         const email = email_login.value;
         const senha = senha_login.value;
         let tem_erro_email = false;
@@ -434,45 +439,114 @@
             tem_erro_senha = true;
         }
 
-        if (!tem_erro_email) {
-            erro_email.style.display = 'none';
-        }
-        if (!tem_erro_senha) {
-            erro_senha.style.display = 'none';
-        }
-        if (tem_erro_email || tem_erro_senha) {
-            return;
-        }
+        if (!tem_erro_email) erro_email.style.display = 'none';
+        if (!tem_erro_senha) erro_senha.style.display = 'none';
+        if (tem_erro_email || tem_erro_senha) return;
+
+        enviandoLogin = true;
+        botao_login_submit.disabled = true;
+        botao_login_submit.innerText = 'Entrando...';
 
         fetch('http://localhost:3000/api/usuarios/login', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, senha })
-        }).then(async response => {
-                const data = await response.json()
+        })
+            .then(async response => {
+                const data = await response.json();
                 if (!response.ok) {
                     const msg = data.mensagem || `Erro na requisição: ${response.status}`;
                     throw new Error(msg);
                 }
-
                 return data;
             })
             .then(data => {
                 if (data.token) {
-                    alert('Login bem-sucedido!');
                     localStorage.setItem('token', data.token);
                     fecharModal();
-                } else {
-                    alert('Falha no login: ' + (data.mensagem || 'Resposta inválida'));
                 }
             })
             .catch(error => {
                 console.error('Erro:', error);
                 erro_senha.innerHTML = error.message;
                 erro_senha.style.display = 'block';
-                alert('Ocorreu um erro ao tentar fazer login.');
+            })
+            .finally(() => {
+                enviandoLogin = false;
+                botao_login_submit.disabled = false;
+                botao_login_submit.innerText = 'Entrar';
+            });
+    }
+
+    function cadastrar() {
+        if (enviandoCadastro) return;
+
+        const nome = nome_cadastro.value;
+        const email = email_cadastro.value;
+        const senha = senha_cadastro.value;
+        const confirmarSenha = confirmar_senha_cadastro.value;
+
+        let tem_erro_nome = false;
+        let tem_erro_email = false;
+        let tem_erro_senha = false;
+        let tem_erro_confirmar_senha = false;
+
+        if (nome.trim() === '') {
+            erro_nome.innerHTML = 'Por favor, insira seu nome.';
+            erro_nome.style.display = 'block';
+            tem_erro_nome = true;
+        }
+        if (!email.includes('@')) {
+            erro_email_cadastro.innerHTML = 'Por favor, insira um e-mail válido.';
+            erro_email_cadastro.style.display = 'block';
+            tem_erro_email = true;
+        }
+        if (senha.length < 6) {
+            erro_senha_cadastro.innerHTML = 'A senha deve ter pelo menos 6 caracteres.';
+            erro_senha_cadastro.style.display = 'block';
+            tem_erro_senha = true;
+        }
+        if (senha !== confirmarSenha) {
+            erro_confirmar_senha_cadastro.innerHTML = 'As senhas não coincidem.';
+            erro_confirmar_senha_cadastro.style.display = 'block';
+            tem_erro_confirmar_senha = true;
+        }
+
+        if (!tem_erro_nome) erro_nome.style.display = 'none';
+        if (!tem_erro_email) erro_email_cadastro.style.display = 'none';
+        if (!tem_erro_senha) erro_senha_cadastro.style.display = 'none';
+        if (!tem_erro_confirmar_senha) erro_confirmar_senha_cadastro.style.display = 'none';
+
+        if (tem_erro_nome || tem_erro_email || tem_erro_senha || tem_erro_confirmar_senha) return;
+
+        botao_cadastro_submit.disabled = true;
+        botao_cadastro_submit.innerText = 'Cadastrando...';
+
+        fetch('http://localhost:3000/api/usuarios/cadastrar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome, email, senha })
+        })
+            .then(async response => {
+                const data = await response.json();
+                if (!response.ok) {
+                    const msg = data.mensagem || `Erro na requisição: ${response.status}`;
+                    throw new Error(msg);
+                }
+                return data;
+            })
+            .then(data => {
+                telaLogin();
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                erro_email_cadastro.innerHTML = error.message;
+                erro_email_cadastro.style.display = 'block';
+            })
+            .finally(() => {
+                enviandoCadastro = false;
+                botao_cadastro_submit.disabled = false;
+                botao_cadastro_submit.innerText = 'Cadastrar';
             });
     }
 
