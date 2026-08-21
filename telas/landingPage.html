@@ -28,7 +28,7 @@
                         <img src="../img/cart.svg" alt="Ícone de carrinho de compras">
                     </a>
                 </li>
-                <li>
+                <li id="container_acao_header">
                     <a href="../telas/landingPage.html?acao=logar">
                         <img src="../img/logoLogin.svg" alt="Ícone de usuário">
                         <h3>Login</h3>
@@ -311,7 +311,8 @@
                 </div>
                 <span id="erro_senha" class="erro_input">Erro na senha</span>
 
-                <button type="submit" id="botao_login_submit" onclick="login()" class="botao_enviar_forms">Entrar</button>
+                <button type="submit" id="botao_login_submit" onclick="login()"
+                    class="botao_enviar_forms">Entrar</button>
             </form>
 
             <div id="links_modal">
@@ -363,7 +364,8 @@
                 </div>
                 <span id="erro_confirmar_senha_cadastro" class="erro_input">Erro na confirmação de senha</span>
 
-                <button type="submit" id="botao_cadastro_submit" onclick="cadastrar()" class="botao_enviar_forms">Cadastrar</button>
+                <button type="submit" id="botao_cadastro_submit" onclick="cadastrar()"
+                    class="botao_enviar_forms">Cadastrar</button>
             </form>
 
             <div id="links_modal">
@@ -385,7 +387,19 @@
         if (acao === 'logar') {
             telaLogin();
         }
+      
     };
+
+    function verificarLogin() {
+          if (localStorage.getItem('token')) {
+            container_acao_header.innerHTML = `
+                <a href="../telas/perfilUsuario.html">
+                    <img src="../img/logoLogin.svg" alt="Ícone de usuário">
+                    <h3>Perfil</h3>
+                </a
+            `;
+        }
+    }
 
     function telaLogin() {
         section_login_modal.style.display = 'block';
@@ -464,6 +478,7 @@
                 if (data.token) {
                     localStorage.setItem('token', data.token);
                     fecharModal();
+                    verificarLogin();
                 }
             })
             .catch(error => {
