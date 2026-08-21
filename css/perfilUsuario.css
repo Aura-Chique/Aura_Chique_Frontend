@@ -364,13 +364,48 @@ input {
     color: var(--cor-texto);
 }
 
-.input_container input {
+.input_modo_cadastro {
     width: 80%;
     height: 30px;
     border-radius: 5px;
     background-color: #faf8f5;
     border: solid 1px var(--cor-header);
     margin-bottom: 20px;
+}
+
+.input_modo_edicao{
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #e7d3b6;
+    border: solid 1px var(--cor-header);
+    margin-bottom: 20px;
+}
+
+.input_modo_edicao:focus {
+    outline: none;
+    background-color: #f7e7cf;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(115, 72, 50, 0.15);
+}
+
+#button_salvar{
+    display: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    color: #fff;
+    font-family: var(--fonte-textos);
+    font-size: 16px;
+    cursor: pointer;
+    border: solid 2px var(--cor-texto-padrao);
+    background-color: var(--cor-primaria);
+}
+
+#button_salvar:hover{
+    background-color: var(--cor-primaria-hover);
+    transition: 0.3s ease;
+    color: #fff;
 }
 
 #conteiner_enderecos {
